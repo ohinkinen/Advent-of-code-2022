@@ -9,15 +9,15 @@ const fs = require('fs');
 
 let data = fs.readFileSync("input.txt").toString().split("\n\n")
 
-let calories = [];
+let elfs = [];
 
 data.forEach(elf => {
-    calories.push(elf.split("\n"));
+    elfs.push(elf.split("\n"));
 });
 
 let most_calories = 0;
 
-calories.forEach(elf => {
+elfs.forEach(elf => {
     let sum = elf.reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
     if (sum > most_calories) most_calories = sum;
@@ -35,7 +35,7 @@ that they are carrying.
 
 let top_three_calories = [0, 0, 0];
 
-calories.forEach(elf => {
+elfs.forEach(elf => {
     let sum = elf.reduce((a, b) => parseInt(a) + parseInt(b), 0);
 
     switch (true) {
